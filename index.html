@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dành cho người đặc biệt ❤️</title>
+    <style>
+        /* Định dạng tổng thể */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #fff;
+            animation: gradient 5s infinite;
+            text-align: center;
+        }
+
+        /* Hiệu ứng chuyển nền */
+        @keyframes gradient {
+            0% { background: #ff9a9e; }
+            50% { background: #fad0c4; }
+            100% { background: #ff9a9e; }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin: 0.2em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 1.6em;
+            margin: 0.5em 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        img {
+            display: 'inline';
+            max-width: 175px;
+            border-radius: 15px;
+            margin: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1.2em;
+            color: #ff9a9e;
+            background-color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ff9a9e;
+            color: #fff;
+        }
+
+        #surpriseMessage {
+            font-size: 1.8em;
+            color: #ffd1dc;
+            margin-top: 20px;
+            display: none;
+        audio{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Dành cho tình yêu của anh ❤️</h1>
+    
+    <!-- Hiệu ứng xuất hiện từng lời nhắn -->
+    <p class="message" id="message1">Em là ánh sáng trong cuộc đời anh!</p>
+    <p class="message" id="message2">Mỗi ngày bên em là một ngày hạnh phúc ❤️</p>
+    <p class="message" id="message3">Anh yêu em nhiều lắm!</p>
+    <img src="Screenshot 2024-11-04 231249.png">
+
+    <button onclick="showSurprise()">Nhấn để nhận điều bất ngờ 💌</button>
+    <div id="surpriseMessage">Em là duy nhất trong trái tim anh! 💖</div>
+
+    <!-- Nhạc nền -->
+    <audio id="backgroundMusic" autoplay>
+        <source src="HenMotMai-BuiAnhTuan-4652623 (mp3cut.net).mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // Hiện từng lời nhắn với hiệu ứng
+        function showMessages() {
+            const messages = document.querySelectorAll('.message');
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    msg.style.opacity = 1;
+                    msg.style.transform = 'translateY(0)';
+                }, index * 1500); // thời gian để hiện từng câu
+            });
+        }
+
+        // Hiện thông điệp bất ngờ và dừng nhạc
+        function showSurprise() {
+            document.getElementById('surpriseMessage').style.display = 'block';
+            document.getElementById('backgroundMusic');
+        }
+
+        // Bắt đầu hiệu ứng khi tải trang
+        window.onload = showMessages;
+    </script>
+
+</body>
+</html>
